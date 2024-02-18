@@ -6,3 +6,5 @@ builds/
 sources/
 sysroot/
 toolchain/
+
+additional_mussel.sh

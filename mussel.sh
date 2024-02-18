@@ -543,6 +543,13 @@ while [ $# -gt 0 ]; do
       CXX_SUPPORT=no
       ;;
     *)
+      if [ -f "${CURDIR}/additional_mussel.sh" ]; then
+        . "${CURDIR}/additional_mussel.sh"
+        if [ $ADDITIONAL = true ]; then
+          shift
+          continue
+        fi
+      fi
       printf -- "${REDC}!!${NORMALC} Unknown architecture or flag: $1\n"
       printf -- "Run '$0 -h' for help.\n"
       exit 1
